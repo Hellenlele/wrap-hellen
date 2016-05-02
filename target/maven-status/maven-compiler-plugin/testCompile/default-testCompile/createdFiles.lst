@@ -1,0 +1,6 @@
+com/wrap/autosripts/util/TestUtil.class
+com/wrap/autosripts/WrapAutoTestCasesByHellen.class
+com/wrap/autosripts/page/HomePage.class
+com/wrap/autosripts/page/CreateWrapPage.class
+com/wrap/autosripts/page/RegisterPersonalAccountPage.class
+com/wrap/autosripts/util/Helpers.class
