@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestUtil {
-	final static Logger logger = Logger.getLogger(TestUtil.class);
+	private final static Logger LOGGER = Logger.getLogger(TestUtil.class);
 	static {
 		try {
 			Properties prop = new Properties();
@@ -18,7 +18,7 @@ public class TestUtil {
 			WEB_DRIVER_HOME_PATH = prop.getProperty("chrome.driver.home.path");
 			BASE_URL = prop.getProperty("wrap.base.url");
 		} catch (Exception ex) {
-			logger.info(ex);
+			LOGGER.info(ex);
 		}
 	}
 	public static String BASE_URL;

@@ -30,7 +30,7 @@ import com.wrap.autosripts.util.TestUtil;
  *
  */
 public class WrapAutoTestCasesByHellen {
-	final static Logger logger = Logger.getLogger(WrapAutoTestCasesByHellen.class);
+	private final static Logger LOGGER = Logger.getLogger(WrapAutoTestCasesByHellen.class);
 	
 	WebDriver driver;
 
@@ -55,7 +55,7 @@ public class WrapAutoTestCasesByHellen {
 	}
 
 	private void signUp() throws Exception {
-		logger.info("Prepare to set up a new user via Email --->");
+		LOGGER.info("Prepare to set up a new user via Email --->");
 		waitForElement(By.xpath(HomePage.LOG_IN)).click();
 		Thread.sleep(3000);
 		
@@ -72,7 +72,7 @@ public class WrapAutoTestCasesByHellen {
 
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.USER_EMAIL_PLACEHOLDER),
 				TestUtil.generateEmail(25));
-		logger.info("Email : " + TestUtil.generateEmail(25));
+		LOGGER.info("Email : " + TestUtil.generateEmail(25));
 		element(By.xpath(RegisterPersonalAccountPage.X_PATH_SIGN_UP_WITH_EMAIL)).click();
 
 		// create userName and password
@@ -80,7 +80,7 @@ public class WrapAutoTestCasesByHellen {
 				TestUtil.generateUserName());
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.PASSWORD_PLACEHOLDER), DEFUALT_PASSWORD);
 		Thread.sleep(1000);
-		logger.info("GenerateUserName : " + TestUtil.generateUserName() +" ; "+ "Password : " + DEFUALT_PASSWORD);
+		LOGGER.info("GenerateUserName : " + TestUtil.generateUserName() +" ; "+ "Password : " + DEFUALT_PASSWORD);
 		
 		// set wait here for fraud check
 		waitForElement(By.xpath(RegisterPersonalAccountPage.X_PATH_CREATE_ACCOUNT)).click();
@@ -89,25 +89,25 @@ public class WrapAutoTestCasesByHellen {
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.FIRST_NAME_PLACEHOLDER), USER_FIRST_NAME);
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.LAST_NAME_PLACEHOLDER), USER_LAST_NAME);
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.COMPONAY_PLACEHOLDER), USER_COMPANY);
-		logger.info("UserName : " + USER_FIRST_NAME +" "+ USER_LAST_NAME +" ; "+ "Company : "+ USER_COMPANY);
+		LOGGER.info("UserName : " + USER_FIRST_NAME +" "+ USER_LAST_NAME +" ; "+ "Company : "+ USER_COMPANY);
 		
 		element(By.xpath(RegisterPersonalAccountPage.X_PATH_CREATE_ACCOUNT_WITH_COMPLETE_INFO)).click();
 		Thread.sleep(2000);
 	}
 	
 	private void createWrap() throws InterruptedException {
-		logger.info("Prepare to create a new Wrap --->");
+		LOGGER.info("Prepare to create a new Wrap --->");
 		
 		//TODO add asserts for some basic verification....
 				
 		waitForElement(By.xpath(CreateWrapPage.X_PATH_CREATE_NEW_WRAP_LINK)).click();
 		Thread.sleep(5000);
 		element(By.xpath(CreateWrapPage.X_PATH_WRAP_USE_BUTTON)).click();
-		logger.info("Create a successful Wrap!");
+		LOGGER.info("Create a successful Wrap!");
 	}
 
 	private void publish() throws InterruptedException {
-		logger.info("Prepare to publish a Wrap --->");
+		LOGGER.info("Prepare to publish a Wrap --->");
 		
 		//TODO add asserts for some basic verification....
 		
@@ -117,7 +117,7 @@ public class WrapAutoTestCasesByHellen {
 		Thread.sleep(1000);
 		waitForElement(By.xpath(CreateWrapPage.X_PATH_CREATE_WRAP_CLOSE)).click();
 		Thread.sleep(3000);
-		logger.info("A new wrap was published !");
+		LOGGER.info("A new wrap was published !");
 	}
 	
 	@After
