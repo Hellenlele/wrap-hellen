@@ -37,7 +37,7 @@ public class WrapAutoTestCasesByHellen {
 	private final String USER_FIRST_NAME = "Hellen";
 	private final String USER_LAST_NAME = "Gao";
 	private final String USER_COMPANY = "Wrap";
-	private final String DEFUALT_PASSWORD = "password23";
+	private final String DEFAULT_PASSWORD = "password23";
 
 	@Before
 	public void launchapp() {
@@ -78,9 +78,9 @@ public class WrapAutoTestCasesByHellen {
 		// create userName and password
 		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.CREATE_USER_PLACEHOLDER),
 				TestUtil.generateUserName());
-		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.PASSWORD_PLACEHOLDER), DEFUALT_PASSWORD);
+		enterInfo(find_input_placeholder(RegisterPersonalAccountPage.PASSWORD_PLACEHOLDER), DEFAULT_PASSWORD);
 		Thread.sleep(1000);
-		LOGGER.info("GenerateUserName : " + TestUtil.generateUserName() +" ; "+ "Password : " + DEFUALT_PASSWORD);
+		LOGGER.info("GenerateUserName : " + TestUtil.generateUserName() +" ; "+ "Password : " + DEFAULT_PASSWORD);
 		
 		// set wait here for fraud check
 		waitForElement(By.xpath(RegisterPersonalAccountPage.X_PATH_CREATE_ACCOUNT)).click();
